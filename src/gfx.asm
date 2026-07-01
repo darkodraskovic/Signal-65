@@ -26,6 +26,8 @@
 .const SPRITE0_Y	= $d001		// sprite 0 vertical position register
 .const SPRITE0_COLOR	= $d027		// sprite 0 color register
 
+.const RASTER		= $d012		// low byte of current raster line
+
 // MEGA65 / VIC-IV graphics macros.
 
 .macro gfx_unlock_vic4() {
