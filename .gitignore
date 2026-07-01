@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Python local environment and caches
+.venv/
+__pycache__/
+*.py[cod]
+
+# Generated MEGA65/Kick Assembler build output
+/bin/
+*.prg
+*.d81
+*.D81
+*.vs
