@@ -6,6 +6,16 @@
 .const BACKGROUND_COLOR	= $d021		// main background color register
 .const COLOR_RAM	= $d800		// first 1024 color entries for 40x25 text mode
 
+.const BACKGROUND_WIDTH	= 320		// 40 columns * 8 pixels
+.const BACKGROUND_HEIGHT = 200		// 25 rows * 8 pixels
+.const BACKGROUND_EDGE_LEFT = $18	// 40-column display left edge in sprite coordinates
+.const BACKGROUND_EDGE_TOP = $32	// 25-row display top edge in sprite coordinates
+.const BACKGROUND_EDGE_RIGHT = BACKGROUND_EDGE_LEFT + BACKGROUND_WIDTH // first pixel past the right edge
+.const BACKGROUND_EDGE_BOTTOM = BACKGROUND_EDGE_TOP + BACKGROUND_HEIGHT // first pixel past the bottom edge
+
+.const SPRITE_WIDTH	= $18		// standard hires sprite width: 24 pixels
+.const SPRITE_HEIGHT	= $15		// standard sprite height: 21 pixels
+
 .const VICIII_MODE	= $d031		// VIC-III mode register; bit 7 selects 80-column text
 
 .const SCRNPTRLSB	= $d060		// low byte of screen map address
@@ -24,6 +34,7 @@
 
 .const SPRITE0_X	= $d000		// sprite 0 horizontal position register
 .const SPRITE0_Y	= $d001		// sprite 0 vertical position register
+.const SPRITE_X_MSB	= $d010		// sprite X high bits; bit 0 belongs to sprite 0
 .const SPRITE0_COLOR	= $d027		// sprite 0 color register
 
 .const RASTER		= $d012		// low byte of current raster line
