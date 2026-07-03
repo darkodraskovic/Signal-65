@@ -65,17 +65,6 @@
 		sta VICIII_MODE		// apply 40-column text mode
 }
 
-.macro gfx_set_screen_address(screenAddress) {
-		lda #<screenAddress	// screen map address low byte
-		sta SCRNPTRLSB		// set $d060
-		lda #>screenAddress	// screen map address middle byte
-		sta SCRNPTRMSB		// set $d061
-		lda #screenAddress >> 16 // screen map address upper byte
-		sta SCRNPTRBNK		// set $d062
-		lda #screenAddress >> 24 // screen map address mega-byte bits
-		sta SCRNPTRMB		// set $d063
-}
-
 .macro gfx_set_charset_address(charsetAddress) {
 		lda #<charsetAddress	// character set address low byte
 		sta CHARPTRLSB		// set $d068
